@@ -21,7 +21,7 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="http://www.lastkilometer.tech/about/index.html">
-<meta property="og:site_name" content="优雅大饭碗">
+<meta property="og:site_name" content="Zhouyongjun‘s blog">
 <meta property="og:description" content="周永军
 Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
 比较懒，什么不会留。">
@@ -35,7 +35,7 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
 
-    <link rel="alternate" href="/atom.xml" title="优雅大饭碗" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Zhouyongjun‘s blog" type="application/atom+xml">
 
 
 
@@ -62,7 +62,7 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>about | 优雅大饭碗</title>
+<title>about | Zhouyongjun‘s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -212,7 +212,7 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">专注于思考</div>
                 </section>
                 
             </div>
@@ -352,7 +352,7 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"about　| 优雅大饭碗　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"about　| Zhouyongjun‘s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -375,7 +375,30 @@ Email： zhouyoju@163.comQQ: 461688836现居于: 北京 海淀
         }
     </script>
     
-    <script> loadComment(); </script>
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
 
     <div id="uyan_frame"></div>
 </section>

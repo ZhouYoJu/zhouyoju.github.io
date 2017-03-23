@@ -20,10 +20,10 @@ Quick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
 <meta property="og:url" content="http://www.lastkilometer.tech/2017/03/20/hello-world/index.html">
-<meta property="og:site_name" content="优雅大饭碗">
+<meta property="og:site_name" content="Zhouyongjun‘s blog">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick">
-<meta property="og:updated_time" content="2017-03-22T08:19:00.000Z">
+<meta property="og:updated_time" content="2017-03-22T15:05:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
@@ -32,7 +32,7 @@ Quick">
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
 
-    <link rel="alternate" href="/atom.xml" title="优雅大饭碗" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Zhouyongjun‘s blog" type="application/atom+xml">
 
 
 
@@ -59,7 +59,7 @@ Quick">
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | 优雅大饭碗</title>
+<title>Hello World | Zhouyongjun‘s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -209,7 +209,7 @@ Quick">
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">专注于思考</div>
                 </section>
                 
             </div>
@@ -308,6 +308,9 @@ Quick">
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<!-- UY BEGIN -->
+<p><div id="uyan_frame"></div></p>
+<p><script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2127830"></script><br><!-- UY END --></p>
 
       
     </div>
@@ -319,7 +322,7 @@ Quick">
         <p><span>本文标题:</span><a href="/2017/03/20/hello-world/">Hello World</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Yongjun Zhou</a></p>
         <p><span>发布时间:</span>2017-03-20, 22:53:24</p>
-        <p><span>最后更新:</span>2017-03-22, 16:19:00</p>
+        <p><span>最后更新:</span>2017-03-22, 23:05:25</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/20/hello-world/" title="Hello World">http://www.lastkilometer.tech/2017/03/20/hello-world/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.lastkilometer.tech/2017/03/20/hello-world/　　作者: Yongjun Zhou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -351,7 +354,7 @@ Quick">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| 优雅大饭碗　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Hello World　| Zhouyongjun‘s blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -374,7 +377,30 @@ Quick">
         }
     </script>
     
-    <script> loadComment(); </script>
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
 
     <div id="uyan_frame"></div>
 </section>
