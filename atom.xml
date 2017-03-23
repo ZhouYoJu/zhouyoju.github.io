@@ -4,7 +4,7 @@
   <subtitle><![CDATA[每天进步一点点]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-03-23T15:48:51.000Z</updated>
+  <updated>2017-03-23T16:10:15.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[多说关闭了]]></title>
+    <link href="http://www.lastkilometer.tech/2017/03/24/%E5%A4%9A%E8%AF%B4%E5%85%B3%E9%97%AD%E4%BA%86/"/>
+    <id>http://www.lastkilometer.tech/2017/03/24/多说关闭了/</id>
+    <published>2017-03-23T16:05:51.000Z</published>
+    <updated>2017-03-23T16:10:15.000Z</updated>
+    <content type="html"><![CDATA[<p>多说关闭了，在我的blog 还未集成成功的时候。</p>
+<ul>
+<li><a id="more"></a>
+</li>
+</ul>
+<hr>
+<p>正想要👀下评论系统的实现。评论系统难以快速变现，步履维艰，或许也是机遇吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>多说关闭了，在我的blog 还未集成成功的时候。</p>
+<ul>
+<li></li></ul>]]>
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
