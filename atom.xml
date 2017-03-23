@@ -4,7 +4,7 @@
   <subtitle><![CDATA[每天进步一点点]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-03-22T15:05:25.000Z</updated>
+  <updated>2017-03-23T15:48:51.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -19,8 +19,12 @@
     <link href="http://www.lastkilometer.tech/2017/03/20/hello-world/"/>
     <id>http://www.lastkilometer.tech/2017/03/20/hello-world/</id>
     <published>2017-03-20T14:53:24.000Z</published>
-    <updated>2017-03-22T15:05:25.000Z</updated>
+    <updated>2017-03-23T15:48:51.000Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<ul>
+<li><a id="more"></a>
+</li>
+</ul>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -34,7 +38,10 @@
 <p><script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2127830"></script><br><!-- UY END --></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.]]>
+    <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<ul>
+<li></li></ul>]]>
+    
     </summary>
     
   </entry>
