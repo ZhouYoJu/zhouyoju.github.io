@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[YJ Zhou‘s blog]]></title>
-  <subtitle><![CDATA[每天进步一点点]]></subtitle>
+  <title><![CDATA[YJ‘S BLOG]]></title>
+  <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
   <updated>2017-03-23T16:10:15.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
-    <name><![CDATA[zhou yongjun]]></name>
+    <name><![CDATA[ZHOU YONGJUN]]></name>
     
   </author>
   
