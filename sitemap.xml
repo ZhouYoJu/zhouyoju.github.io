@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lastkilometer.tech/categories/index.html</loc>
+    
+    <lastmod>2017-03-30T14:51:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.lastkilometer.tech/about/index.html</loc>
+    
+    <lastmod>2017-03-30T14:51:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lastkilometer.tech/tags/index.html</loc>
     
     <lastmod>2017-03-30T14:42:02.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://www.lastkilometer.tech/2017/03/24/%E5%A4%9A%E8%AF%B4%E5%85%B3%E9%97%AD%E4%BA%86/</loc>
     
     <lastmod>2017-03-23T16:10:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lastkilometer.tech/about/index.html</loc>
-    
-    <lastmod>2017-03-22T08:28:27.000Z</lastmod>
     
   </url>
   
