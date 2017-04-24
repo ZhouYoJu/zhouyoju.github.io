@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-04-24T12:38:08.000Z</updated>
+  <updated>2017-04-24T12:41:07.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://www.lastkilometer.tech/2017/04/24/Nginx-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%88%87%E5%89%B2/"/>
     <id>http://www.lastkilometer.tech/2017/04/24/Nginx-日志文件切割/</id>
     <published>2017-04-24T12:10:15.000Z</published>
-    <updated>2017-04-24T12:38:08.000Z</updated>
-    <content type="html"><![CDATA[<p>由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法类似。</p>
+    <updated>2017-04-24T12:41:07.000Z</updated>
+    <content type="html"><![CDATA[<p>由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法类似。<br><a id="more"></a></p>
 <h2 id="Linux-平台切割"><a href="#Linux-平台切割" class="headerlink" title="Linux 平台切割"></a>Linux 平台切割</h2><h3 id="shell-crontab方式"><a href="#shell-crontab方式" class="headerlink" title="shell+crontab方式"></a>shell+crontab方式</h3><p>在 Linux 平台上进行切割，需要使用 date 命令以获得昨天的日期、使用 kill 命令向 Nginx 进程发送重新打开日志文件的信号，以及 crontab 设置执行任务周期。</p>
 <ol>
 <li>先创建一个 Shell 脚本，如下：</li>
@@ -43,7 +43,8 @@
 <h3 id="logrotate方式"><a href="#logrotate方式" class="headerlink" title="logrotate方式"></a>logrotate方式</h3><p>   另外一种很好的方式。没有尝试过，就不能多说了。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 err]]>
+    <![CDATA[<p>由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法类似。<br></p>]]>
+    
     </summary>
     
       <category term="nginx 日志" scheme="http://www.lastkilometer.tech/tags/nginx-%E6%97%A5%E5%BF%97/"/>
