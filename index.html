@@ -162,6 +162,192 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ElasticSearch-QueryParser-分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/ElasticSearch-QueryParser-分析/">ElasticSearch QueryParser 分析</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/24/ElasticSearch-QueryParser-分析/" class="archive-article-date">
+  	<time datetime="2017-04-24T12:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#ElasticSearch QueryParser 分析</p>
+<blockquote>
+<p>###Apache Lucene QueryParsers.<a href="https://lucene.apache.org/core/6_5_0/queryparser/index.html" target="_blank" rel="external">6.5.0</a><br>This module provides a number of queryparsers:</p>
+<ul>
+<li>Classic</li>
+<li>Analyzing</li>
+<li>Complex Phrase</li>
+<li>Extendable</li>
+<li>Flexible</li>
+<li>Surround</li>
+<li>XML</li>
+</ul>
+<h3 id="Classic"><a href="#Classic" class="headerlink" title="Classic"></a>Classic</h3><p>A Simple Lucene QueryParser implemented with JavaCC.</p>
+<h3 id="Analyzing"><a href="#Analyzing" class="headerlink" title="Analyzing"></a>Analyzing</h3><p>QueryParser that passes Fuzzy-, Prefix-, Range-, and WildcardQuerys through the given analyzer.</p>
+<h3 id="Complex-Phrase"><a href="#Complex-Phrase" class="headerlink" title="Complex Phrase"></a>Complex Phrase</h3><p>QueryParser which permits complex phrase query syntax eg “(john jon jonathan~) peters*”</p>
+<p>###Extendable</p>
+<p>Extendable QueryParser provides a simple and flexible extension mechanism by overloading query field names.</p>
+<p>###Flexible</p>
+<p>This project contains the new Lucene query parser implementation, which matches the syntax of the core QueryParser but offers a more modular architecture to enable customization.</p>
+<p>It’s currently divided in 2 main packages:</p>
+<ul>
+<li>org.apache.lucene.queryparser.flexible.core: it contains the query parser API classes, which should be extended by query parser implementations.</li>
+<li>org.apache.lucene.queryparser.flexible.standard: it contains the current Lucene query parser implementation using the new query parser API.</li>
+</ul>
+</blockquote>
+<p>#####Features<br>&gt;<br>Full support for boolean logic (not enabled)<br>QueryNode Trees - support for several syntaxes, that can be converted into similar syntax QueryNode trees.<br>QueryNode Processors - Optimize, validate, rewrite the QueryNode trees<br>Processors Pipelines - Select your favorite Processor and build a processor pipeline, to implement the features you need<br>Config Interfaces - Allow the consumer of the Query Parser to implement a diff Config Handler Objects to suite their needs.<br>Standard Builders - convert QueryNode’s into several lucene representations. Supported conversion is using a 2.4 compatible logic<br>QueryNode tree’s can be converted to a lucene 2.4 syntax string, using toQueryString<br>Design<br>&gt;<br>This new query parser was designed to have very generic architecture, so that it can be easily used for different products with varying query syntaxes. This code is much more flexible and extensible than the Lucene query parser in 2.4.X.<br>&gt;<br>The new query parser goal is to separate syntax and semantics of a query. E.g. ‘a AND b’, ‘+a +b’, ‘AND(a,b)’ could be different syntaxes for the same query. It distinguishes the semantics of the different query components, e.g. whether and how to tokenize/lemmatize/normalize the different terms or which Query objects to create for the terms. It allows to write a parser with a new syntax, while reusing the underlying semantics, as quickly as possible.<br>&gt;<br>The query parser has three layers and its core is what we call the QueryNode tree. It is a tree that initially represents the syntax of the original query, e.g. for ‘a AND b’:<br>&gt;<br>      AND<br>     /   \<br>    A     B<br>The three layers are:<br>&gt;<br>QueryParser<br>This layer is the text parsing layer which simply transforms the query text string into a QueryNode tree. Every text parser must implement the interface SyntaxParser. Lucene default implementations implements it using JavaCC.<br>QueryNodeProcessor<br>The query node processors do most of the work. It is in fact a configurable chain of processors. Each processors can walk the tree and modify nodes or even the tree’s structure. That makes it possible to e.g. do query optimization before the query is executed or to tokenize terms.<br>QueryBuilder<br>The third layer is a configurable map of builders, which map QueryNode types to its specific builder that will transform the QueryNode into Lucene Query object.<br>Furthermore, the query parser uses flexible configuration objects. It also uses message classes that allow to attach resource bundles. This makes it possible to translate messages, which is an important feature of a query parser.<br>&gt;<br>This design allows to develop different query syntaxes very quickly.<br>&gt;<br>&gt;</p>
+<p>####StandardQueryParser and QueryParserWrapper<br>&gt;<br>The classic Lucene query parser is located under org.apache.lucene.queryparser.classic.<br>&gt;<br>To make it simpler to use the new query parser the class StandardQueryParser may be helpful, specially for people that do not want to extend the Query Parser. It uses the default Lucene query processors, text parser and builders, so you don’t need to worry about dealing with those. StandardQueryParser usage:<br>&gt;<br>      StandardQueryParser qpHelper = new StandardQueryParser();<br>      StandardQueryConfigHandler config =  qpHelper.getQueryConfigHandler();<br>      config.setAllowLeadingWildcard(true);<br>      config.setAnalyzer(new WhitespaceAnalyzer());<br>      Query query = qpHelper.parse(“apache AND lucene”, “defaultField”);</p>
+<p>###Surround<br>&gt;<br>A QueryParser that supports the Span family of queries as well as pre and infix notation.<br>&gt;</p>
+<p>###XML<br>&gt;<br>A QueryParser that produces Lucene Query objects from XML streams.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ElasticSearch/" class="article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/ElasticSearch-QueryParser-分析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Nginx-日志文件切割" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/24/Nginx-日志文件切割/">Nginx 日志文件切割</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/24/Nginx-日志文件切割/" class="archive-article-date">
+  	<time datetime="2017-04-24T12:10:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法类似。</p>
+<h2 id="Linux-平台切割"><a href="#Linux-平台切割" class="headerlink" title="Linux 平台切割"></a>Linux 平台切割</h2><h3 id="shell-crontab方式"><a href="#shell-crontab方式" class="headerlink" title="shell+crontab方式"></a>shell+crontab方式</h3><p>在 Linux 平台上进行切割，需要使用 date 命令以获得昨天的日期、使用 kill 命令向 Nginx 进程发送重新打开日志文件的信号，以及 crontab 设置执行任务周期。</p>
+<ol>
+<li>先创建一个 Shell 脚本，如下：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash  </span></div><div class="line"><span class="comment">## 零点执行该脚本  </span></div><div class="line">  </div><div class="line"><span class="comment">## Nginx 日志文件所在的目录  </span></div><div class="line">LOGS_PATH=/usr/<span class="built_in">local</span>/nginx/logs  </div><div class="line">  </div><div class="line"><span class="comment">## 获取昨天的 yyyy-MM-dd  </span></div><div class="line">YESTERDAY=$(date <span class="_">-d</span> <span class="string">"yesterday"</span> +%Y-%m-%d)  </div><div class="line">  </div><div class="line"><span class="comment">## 移动文件  </span></div><div class="line">mv <span class="variable">$&#123;LOGS_PATH&#125;</span>/access.log <span class="variable">$&#123;LOGS_PATH&#125;</span>/access_<span class="variable">$&#123;YESTERDAY&#125;</span>.log  </div><div class="line">  </div><div class="line"><span class="comment">## 向 Nginx 主进程发送 USR1 信号。USR1 信号是重新打开日志文件  </span></div><div class="line"><span class="built_in">kill</span> -USR1 $(cat /usr/<span class="built_in">local</span>/nginx/nginx.pid)</div></pre></td></tr></table></figure>
+<ol>
+<li><p>上面这个脚本中的最后一行必须向 Nginx 的进程发送 USR1 信号以重新打开日志文件，如果不写的话，Nginx 会继续将日志信息写入 access_[yyyy-MM-dd].log 的那个文件中，这显然是不正确的。</p>
+<p> 脚本完成后将其存入 Nginx 安装目录的 sbin 中，取名为 cut-log.sh，之后使用 crontab -e 新增一个定时任务，在其中增加执行这个脚本：</p>
+</li>
+</ol>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">0 </span><span class="number">0</span> * * * /bin/bash /<span class="keyword">usr</span>/local/nginx/sbin/cut-<span class="keyword">log</span>.sh</div></pre></td></tr></table></figure>
+<p> 查看定时任务状态：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/crond status</span></div></pre></td></tr></table></figure></p>
+<p> 重启</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/crond restart</span></div></pre></td></tr></table></figure>
+<p>遇到的问题：</p>
+<ul>
+<li>执行 kill -USR1 报</li>
+</ul>
+<h3 id="logrotate方式"><a href="#logrotate方式" class="headerlink" title="logrotate方式"></a>logrotate方式</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nginx 日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/nginx/" class="article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/24/Nginx-日志文件切割/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-多说关闭了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -353,6 +539,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nginx 日志</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

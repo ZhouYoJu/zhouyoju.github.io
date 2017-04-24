@@ -6,18 +6,54 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.lastkilometer.tech">
-  <title>tags | YJ‘S BLOG</title>
+  <title>ElasticSearch QueryParser 分析 | YJ‘S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="You thought you only had two problems...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://www.lastkilometer.tech/tags/index.html">
+  <meta name="description" content="#ElasticSearch QueryParser 分析
+
+###Apache Lucene QueryParsers.6.5.0This module provides a number of queryparsers:
+
+Classic
+Analyzing
+Complex Phrase
+Extendable
+Flexible
+Surround
+XML
+
+ClassicA Simple Luc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch QueryParser 分析">
+<meta property="og:url" content="http://www.lastkilometer.tech/2017/04/24/ElasticSearch-QueryParser-分析/index.html">
 <meta property="og:site_name" content="YJ‘S BLOG">
-<meta property="og:description" content="You thought you only had two problems...">
-<meta property="og:updated_time" content="2017-03-30T14:42:02.000Z">
+<meta property="og:description" content="#ElasticSearch QueryParser 分析
+
+###Apache Lucene QueryParsers.6.5.0This module provides a number of queryparsers:
+
+Classic
+Analyzing
+Complex Phrase
+Extendable
+Flexible
+Surround
+XML
+
+ClassicA Simple Luc">
+<meta property="og:updated_time" content="2017-04-24T12:15:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="You thought you only had two problems...">
+<meta name="twitter:title" content="ElasticSearch QueryParser 分析">
+<meta name="twitter:description" content="#ElasticSearch QueryParser 分析
+
+###Apache Lucene QueryParsers.6.5.0This module provides a number of queryparsers:
+
+Classic
+Analyzing
+Complex Phrase
+Extendable
+Flexible
+Surround
+XML
+
+ClassicA Simple Luc">
   
     <link rel="alternative" href="/atom.xml" title="YJ‘S BLOG" type="application/atom+xml">
   
@@ -161,27 +197,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-ElasticSearch-QueryParser-分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      ElasticSearch QueryParser 分析
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2017-03-21T11:24:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
+        <a href="/2017/04/24/ElasticSearch-QueryParser-分析/" class="archive-article-date">
+  	<time datetime="2017-04-24T12:14:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#ElasticSearch QueryParser 分析</p>
+<blockquote>
+<p>###Apache Lucene QueryParsers.<a href="https://lucene.apache.org/core/6_5_0/queryparser/index.html" target="_blank" rel="external">6.5.0</a><br>This module provides a number of queryparsers:</p>
+<ul>
+<li>Classic</li>
+<li>Analyzing</li>
+<li>Complex Phrase</li>
+<li>Extendable</li>
+<li>Flexible</li>
+<li>Surround</li>
+<li>XML</li>
+</ul>
+<h3 id="Classic"><a href="#Classic" class="headerlink" title="Classic"></a>Classic</h3><p>A Simple Lucene QueryParser implemented with JavaCC.</p>
+<h3 id="Analyzing"><a href="#Analyzing" class="headerlink" title="Analyzing"></a>Analyzing</h3><p>QueryParser that passes Fuzzy-, Prefix-, Range-, and WildcardQuerys through the given analyzer.</p>
+<h3 id="Complex-Phrase"><a href="#Complex-Phrase" class="headerlink" title="Complex Phrase"></a>Complex Phrase</h3><p>QueryParser which permits complex phrase query syntax eg “(john jon jonathan~) peters*”</p>
+<p>###Extendable</p>
+<p>Extendable QueryParser provides a simple and flexible extension mechanism by overloading query field names.</p>
+<p>###Flexible</p>
+<p>This project contains the new Lucene query parser implementation, which matches the syntax of the core QueryParser but offers a more modular architecture to enable customization.</p>
+<p>It’s currently divided in 2 main packages:</p>
+<ul>
+<li>org.apache.lucene.queryparser.flexible.core: it contains the query parser API classes, which should be extended by query parser implementations.</li>
+<li>org.apache.lucene.queryparser.flexible.standard: it contains the current Lucene query parser implementation using the new query parser API.</li>
+</ul>
+</blockquote>
+<p>#####Features<br>&gt;<br>Full support for boolean logic (not enabled)<br>QueryNode Trees - support for several syntaxes, that can be converted into similar syntax QueryNode trees.<br>QueryNode Processors - Optimize, validate, rewrite the QueryNode trees<br>Processors Pipelines - Select your favorite Processor and build a processor pipeline, to implement the features you need<br>Config Interfaces - Allow the consumer of the Query Parser to implement a diff Config Handler Objects to suite their needs.<br>Standard Builders - convert QueryNode’s into several lucene representations. Supported conversion is using a 2.4 compatible logic<br>QueryNode tree’s can be converted to a lucene 2.4 syntax string, using toQueryString<br>Design<br>&gt;<br>This new query parser was designed to have very generic architecture, so that it can be easily used for different products with varying query syntaxes. This code is much more flexible and extensible than the Lucene query parser in 2.4.X.<br>&gt;<br>The new query parser goal is to separate syntax and semantics of a query. E.g. ‘a AND b’, ‘+a +b’, ‘AND(a,b)’ could be different syntaxes for the same query. It distinguishes the semantics of the different query components, e.g. whether and how to tokenize/lemmatize/normalize the different terms or which Query objects to create for the terms. It allows to write a parser with a new syntax, while reusing the underlying semantics, as quickly as possible.<br>&gt;<br>The query parser has three layers and its core is what we call the QueryNode tree. It is a tree that initially represents the syntax of the original query, e.g. for ‘a AND b’:<br>&gt;<br>      AND<br>     /   \<br>    A     B<br>The three layers are:<br>&gt;<br>QueryParser<br>This layer is the text parsing layer which simply transforms the query text string into a QueryNode tree. Every text parser must implement the interface SyntaxParser. Lucene default implementations implements it using JavaCC.<br>QueryNodeProcessor<br>The query node processors do most of the work. It is in fact a configurable chain of processors. Each processors can walk the tree and modify nodes or even the tree’s structure. That makes it possible to e.g. do query optimization before the query is executed or to tokenize terms.<br>QueryBuilder<br>The third layer is a configurable map of builders, which map QueryNode types to its specific builder that will transform the QueryNode into Lucene Query object.<br>Furthermore, the query parser uses flexible configuration objects. It also uses message classes that allow to attach resource bundles. This makes it possible to translate messages, which is an important feature of a query parser.<br>&gt;<br>This design allows to develop different query syntaxes very quickly.<br>&gt;<br>&gt;</p>
+<p>####StandardQueryParser and QueryParserWrapper<br>&gt;<br>The classic Lucene query parser is located under org.apache.lucene.queryparser.classic.<br>&gt;<br>To make it simpler to use the new query parser the class StandardQueryParser may be helpful, specially for people that do not want to extend the Query Parser. It uses the default Lucene query processors, text parser and builders, so you don’t need to worry about dealing with those. StandardQueryParser usage:<br>&gt;<br>      StandardQueryParser qpHelper = new StandardQueryParser();<br>      StandardQueryConfigHandler config =  qpHelper.getQueryConfigHandler();<br>      config.setAllowLeadingWildcard(true);<br>      config.setAnalyzer(new WhitespaceAnalyzer());<br>      Query query = qpHelper.parse(“apache AND lucene”, “defaultField”);</p>
+<p>###Surround<br>&gt;<br>A QueryParser that supports the Span family of queries as well as pre and infix notation.<br>&gt;</p>
+<p>###XML<br>&gt;<br>A QueryParser that produces Lucene Query objects from XML streams.</p>
+
       
 
       
@@ -215,7 +280,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/ElasticSearch/" class="article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -265,7 +352,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://www.lastkilometer.tech/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://www.lastkilometer.tech/2017/04/24/ElasticSearch-QueryParser-分析/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,9 +364,38 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/24/Nginx-日志文件切割/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nginx 日志文件切割</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://www.lastkilometer.tech/2017/04/24/ElasticSearch-QueryParser-分析/", 
+    sourceId: "ElasticSearch-QueryParser-分析",
+    productKey: "c30db075fa47438a9729860a2e98f90e",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
 
 
           </div>
@@ -302,7 +418,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
