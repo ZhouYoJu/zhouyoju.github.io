@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://www.lastkilometer.tech/2017/04/24/Nginx-日志文件切割/index.html">
 <meta property="og:site_name" content="YJ‘S BLOG">
 <meta property="og:description" content="由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法">
-<meta property="og:updated_time" content="2017-04-24T12:14:05.000Z">
+<meta property="og:updated_time" content="2017-04-24T12:38:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 日志文件切割">
 <meta name="twitter:description" content="由于 Nginx 的日志都是写在一个文件当中的，因此，我们需要每天零点将前一天的日志存为另外一个文件，这里我们就将 Nginx 位于 logs 目录中的 access.log 存为 access_[yyyy-MM-dd].log 的文件。其实 logs 目录中还有个 error.log 的错误日志文件，这个文件也需要每天切割一个，在这里就说 access.log 了，error.log 的切割方法">
@@ -198,9 +198,11 @@
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/crond restart</span></div></pre></td></tr></table></figure>
 <p>遇到的问题：</p>
 <ul>
-<li>执行 kill -USR1 报</li>
+<li>执行 <code>kill -USR1</code> 报<code>arguments must be process or job IDs</code>:</li>
 </ul>
-<h3 id="logrotate方式"><a href="#logrotate方式" class="headerlink" title="logrotate方式"></a>logrotate方式</h3>
+<p>   原因： 某帖子中<code>kill -USR1</code> 参数为<code>’$cat /usr/local/nginx/nginx.pid)‘</code>导致参数不能解析成功。</p>
+<h3 id="logrotate方式"><a href="#logrotate方式" class="headerlink" title="logrotate方式"></a>logrotate方式</h3><p>   另外一种很好的方式。没有尝试过，就不能多说了。</p>
+
       
 
       
@@ -320,15 +322,6 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/24/ElasticSearch-QueryParser-分析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ElasticSearch QueryParser 分析
-        
-      </div>
-    </a>
-  
   
     <a href="/2017/03/24/多说关闭了/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">多说关闭了</div>
@@ -445,10 +438,6 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nginx 日志</a>
