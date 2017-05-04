@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-04-24T12:41:07.000Z</updated>
+  <updated>2017-05-04T11:48:10.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Windows 远程Mac]]></title>
+    <link href="http://www.lastkilometer.tech/2017/05/04/Windows-%E8%BF%9C%E7%A8%8BMac/"/>
+    <id>http://www.lastkilometer.tech/2017/05/04/Windows-远程Mac/</id>
+    <published>2017-05-04T11:39:45.000Z</published>
+    <updated>2017-05-04T11:48:10.000Z</updated>
+    <content type="html"><![CDATA[<p>#在Windows下如何远程Mac</p>
+<p><strong>TeamViewer</strong></p>
+<p><strong>TeamViewer</strong></p>
+<p><strong>TeamViewer</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>#在Windows下如何远程Mac</p>
+<p><strong>TeamViewer</strong></p>
+<p><strong>TeamViewer</strong></p>
+<p><strong>TeamViewer</strong></p>
+]]>
+    </summary>
+    
+      <category term="远程" scheme="http://www.lastkilometer.tech/tags/%E8%BF%9C%E7%A8%8B/"/>
+    
+      <category term="tools" scheme="http://www.lastkilometer.tech/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Nginx 日志文件切割]]></title>
