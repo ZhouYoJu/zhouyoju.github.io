@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-05-07T08:40:56.000Z</updated>
+  <updated>2017-06-06T11:25:17.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[org.codehaus.plexus.archiver.jar.Manifest.write(java.io.PrintWriter)]]></title>
+    <link href="http://www.lastkilometer.tech/2017/06/06/org-codehaus-plexus-archiver-jar-Manifest-write-java-io-PrintWriter/"/>
+    <id>http://www.lastkilometer.tech/2017/06/06/org-codehaus-plexus-archiver-jar-Manifest-write-java-io-PrintWriter/</id>
+    <published>2017-06-06T11:21:17.000Z</published>
+    <updated>2017-06-06T11:25:17.000Z</updated>
+    <content type="html"><![CDATA[<p>Eclipse 2.0.2 and Maven 0.17 Configuration</p>
+<p>问题：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Description	Resource	Path	Location	Type</div><div class="line">org<span class="selector-class">.codehaus</span><span class="selector-class">.plexus</span><span class="selector-class">.archiver</span><span class="selector-class">.jar</span><span class="selector-class">.Manifest</span><span class="selector-class">.write</span>(java<span class="selector-class">.io</span><span class="selector-class">.PrintWriter</span>)	pom<span class="selector-class">.xml</span>	/anjian-dataflow-EQcTCL	line <span class="number">1</span>	Maven Configuration Problem</div></pre></td></tr></table></figure></p>
+<p>解决方案：<br>Eclipse的 Help-&gt; Install New Software<br>输入安装下面的：<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>otto.takari.io<span class="regexp">/content/</span>sites<span class="regexp">/m2e.extras/m</span>2eclipse-mavenarchiver<span class="regexp">/0.17.2/</span>N<span class="regexp">/LATEST/</span></div></pre></td></tr></table></figure></p>
+<p>安装完需要重启，再maven update project。</p>
+<p>可以参考：<br><a href="https://stackoverflow.com/questions/37936646/eclipse-2-0-2-and-maven-0-17-configuration" target="_blank" rel="external">https://stackoverflow.com/questions/37936646/eclipse-2-0-2-and-maven-0-17-configuration</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Eclipse 2.0.2 and Maven 0.17 Configuration</p>
+<p>问题：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[婚姻]]></title>
