@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-06-06T11:25:17.000Z</updated>
+  <updated>2017-12-31T15:50:42.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2017]]></title>
+    <link href="http://www.lastkilometer.tech/2017/12/31/2017/"/>
+    <id>http://www.lastkilometer.tech/2017/12/31/2017/</id>
+    <published>2017-12-31T15:39:14.000Z</published>
+    <updated>2017-12-31T15:50:42.000Z</updated>
+    <content type="html"><![CDATA[<pre><code>消极的一年，不是吗？
+热闹的北京，真的吗？
+茫然的人生，或许吧...
+
+前天追了一天的《柒个我》，说话也像韩国人了呢。
+
+那么，是时候换个 人格生活了。
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<pre><code>消极的一年，不是吗？
+热闹的北京，真的吗？
+茫然的人生，或许吧...
+
+前天追了一天的《柒个我》，说话也像韩国人了呢。
+
+那么，是时候换个 人格生活了。
+</code></pre>]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[org.codehaus.plexus.archiver.jar.Manifest.write(java.io.PrintWriter)]]></title>
