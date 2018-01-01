@@ -4,7 +4,7 @@
   <subtitle><![CDATA[You thought you only had two problems...]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.lastkilometer.tech/"/>
-  <updated>2017-12-31T15:50:42.000Z</updated>
+  <updated>2018-01-01T14:51:12.000Z</updated>
   <id>http://www.lastkilometer.tech/</id>
   
   <author>
@@ -19,8 +19,11 @@
     <link href="http://www.lastkilometer.tech/2017/12/31/2017/"/>
     <id>http://www.lastkilometer.tech/2017/12/31/2017/</id>
     <published>2017-12-31T15:39:14.000Z</published>
-    <updated>2017-12-31T15:50:42.000Z</updated>
-    <content type="html"><![CDATA[<pre><code>消极的一年，不是吗？
+    <updated>2018-01-01T14:51:12.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>大部分人在二三十岁就死了，因为过了这个年龄，他们只是自己的影子，此后的余生则是在模仿自己中度过。日复一日，更机械，更装腔作势地重复他们有生之年的所作所为，所思所想，所爱所恨。——罗曼·罗兰</p>
+</blockquote>
+<pre><code>消极的一年，不是吗？
 热闹的北京，真的吗？
 茫然的人生，或许吧...
 
@@ -29,14 +32,10 @@
 那么，是时候换个 人格生活了。
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<pre><code>消极的一年，不是吗？
-热闹的北京，真的吗？
-茫然的人生，或许吧...
-
-前天追了一天的《柒个我》，说话也像韩国人了呢。
-
-那么，是时候换个 人格生活了。
-</code></pre>]]>
+    <![CDATA[<blockquote>
+<p>大部分人在二三十岁就死了，因为过了这个年龄，他们只是自己的影子，此后的余生则是在模仿自己中度过。日复一日，更机械，更装腔作势地重复他们有生之年的所作所为，所思所想，所爱所恨。——罗曼·罗兰</p>
+</blockquote>
+<pre><code>]]>
     </summary>
     
   </entry>
